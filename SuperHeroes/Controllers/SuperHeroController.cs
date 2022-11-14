@@ -20,7 +20,13 @@ public class SuperHeroController : ControllerBase
         var heroes = dataContext.SuperHeroes.ToList();
         return Ok(heroes);
     }
-
+    // api/SuperHero/static
+    [HttpGet("static")]
+    public async Task<IActionResult> getStaticValue()
+    {
+        return Ok("Kerthick");
+        
+    }
     [HttpPost]
     public async Task<IActionResult> addHeo([FromBody] SuperHero newSh)
     {
